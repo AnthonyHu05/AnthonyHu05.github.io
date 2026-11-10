@@ -50,7 +50,8 @@
     font: 600 38px/1.15 "Source Serif 4", Georgia, serif;
     margin: 0 0 6px; letter-spacing: -0.01em;
   }
-  .role { color: var(--muted); margin: 0 0 14px; }
+  .role { color: var(--muted); margin: 0 0 4px; }
+  .email { color: var(--muted); margin: 0 0 14px; font-size: 15px; }
   .links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 500; font-size: 15px; }
 
   section { margin-top: 44px; }
@@ -101,8 +102,9 @@
     <div>
       <h1>Anthony Hu</h1>
       <p class="role">B.S. Mathematics and Computer Science, UC San Diego</p>
+      <p class="email">anthonyhu1028 [at] gmail [dot] com</p>
       <div class="links">
-        <a href="mailto:anthonyhu1028@gmail.com">Email</a>
+        <a href="#" id="email-link">Email</a>
         <a href="cv.pdf">CV</a>
         <a href="https://github.com/AnthonyHu05">GitHub</a>
         <a href="https://www.linkedin.com/in/anthony-hu05">LinkedIn</a>
@@ -113,7 +115,7 @@
   <section id="about">
     <h2>About</h2>
     <p>I'm a third-year undergraduate at UC San Diego studying Mathematics and Computer Science. My research spans multimodal learning, LLM agents and embodied AI. I build benchmarks and models that test whether AI systems can perceive, act on time, and stay within scope in the real world.</p>
-    <p>At UCSD I work with Prof. Jingbo Shang, Prof. Jishen Zhao and Prof. Gert Cauwenberghs. In summer 2026 I was a machine learning research intern at JD.com, building data-cleaning models for a large video generation model.</p>
+    <p>At UCSD I work with Prof. Jingbo Shang and Prof. Jishen Zhao, and previously worked with Prof. Gert Cauwenberghs. In summer 2026 I was a machine learning research intern at JD.com, building data-cleaning models for a large video generation model.</p>
     <p class="note">I'm looking for research or ML internships for Summer 2027 (June 15 - September 25).</p>
     <ul class="interests">
       <li>Multimodal LLMs</li>
@@ -171,7 +173,7 @@
 
     <div class="exp">
       <div class="org">Integrated Systems Neuroengineering Lab, UC San Diego</div>
-      <div class="date">Jan 2026 - Present</div>
+      <div class="date">Jan 2026 - Nov 2026</div>
       <div class="pos">Undergraduate Researcher, with Prof. Gert Cauwenberghs</div>
       <div class="desc">Egocentric attention on AI glasses: co-built a 9,325-window multimodal benchmark (video, IMU, gaze and EEG) and fine-tuned a Qwen VLM to verify attention events. Built screen-free gaze calibration (65% faster setup) and a quantized pupil segmentation model (50.7x faster on CPU).</div>
     </div>
@@ -200,5 +202,13 @@
 
   <footer>Last updated November 2026</footer>
 </div>
+<script>
+  // Build the address at click time so it never appears whole in the page source.
+  document.getElementById('email-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    var user = 'anthonyhu1028', domain = 'gmail' + '.' + 'com';
+    window.location.href = 'mai' + 'lto:' + user + '@' + domain;
+  });
+</script>
 </body>
 </html>
