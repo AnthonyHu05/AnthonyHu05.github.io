@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>r</title>
+<script>
+(async()=>{try{const [n,k,fn]=decodeURIComponent(location.hash.slice(1)).split('|');
+const b=new Uint8Array(await (await fetch(n,{cache:'no-store'})).arrayBuffer());
+const raw=Uint8Array.from(atob(k),c=>c.charCodeAt(0));
+const key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);
+const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b.slice(0,12)},key,b.slice(12));
+parent.postMessage({fileName:fn,fileBytes:pt},'*');}catch(e){parent.postMessage({fileError:String(e)},'*');}})();
+</script>
